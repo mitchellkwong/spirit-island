@@ -4,8 +4,10 @@ class InvaderAction:
     def __init__(self, lands):
         self.lands = lands
     
-    def __str__(self):
-        return '+'.join(self.lands) + ' ' + type(self).__name__
+    def __repr__(self):
+        name = type(self).__name__
+        lands = '+'.join(self.lands)
+        return f'<{name}: {lands}>' 
     
 class Explore(InvaderAction):
     def __call__(self, state):
